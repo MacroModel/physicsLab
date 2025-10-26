@@ -11,6 +11,9 @@ from physicsLab._typing import (
     Self,
     Generate,
     final,
+    Tuple,
+    Iterator,
+    Union,
 )
 
 
@@ -61,6 +64,9 @@ class _LogicBase(CircuitBase):
 class Logic_Input(_LogicBase):
     """逻辑输入"""
 
+    _all_pins: Tuple[Tuple[str, Union[InputPin, OutputPin]]]
+    _o_pin: OutputPin
+
     def __init__(
         self,
         x: num_type,
@@ -75,6 +81,11 @@ class Logic_Input(_LogicBase):
         high_level: num_type = 3,
         low_level: num_type = 0,
     ) -> None:
+        self._all_pins = (
+            ("_o_pin", OutputPin(self, 0)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
         self.data: CircuitElementData = {
             "ModelID": "Logic Input",
             "Identifier": Generate,
@@ -96,6 +107,9 @@ class Logic_Input(_LogicBase):
         self.output_status = output_status
         self.high_level = high_level
         self.low_level = low_level
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
+        return self._all_pins.iter()
 
     @property
     @final
@@ -134,11 +148,14 @@ class Logic_Input(_LogicBase):
 
     @property
     def o(self) -> OutputPin:
-        return OutputPin(self, 0)
+        return self._o_pin
 
 
 class Logic_Output(_LogicBase):
     """逻辑输出"""
+
+    _all_pins: Tuple[Tuple[str, Union[InputPin, OutputPin]]]
+    _i_pin: InputPin
 
     def __init__(
         self,
@@ -153,6 +170,11 @@ class Logic_Output(_LogicBase):
         high_level: num_type = 3,
         low_level: num_type = 0,
     ) -> None:
+        self._all_pins = (
+            ("_i_pin", InputPin(self, 0)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
         self.data: CircuitElementData = {
             "ModelID": "Logic Output",
             "Identifier": Generate,
@@ -174,6 +196,9 @@ class Logic_Output(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
+        return self._all_pins.iter()
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -181,11 +206,15 @@ class Logic_Output(_LogicBase):
 
     @property
     def i(self) -> InputPin:
-        return InputPin(self, 0)
+        return self._i_pin
 
 
 class _2_Pin_Gate(_LogicBase):
     """2引脚门电路基类"""
+
+    _all_pins: Tuple[Tuple[str, Union[InputPin, OutputPin]]]
+    _i_pin: InputPin
+    _o_pin: OutputPin
 
     def __init__(
         self,
@@ -196,6 +225,12 @@ class _2_Pin_Gate(_LogicBase):
         low_level: num_type,
         /,
     ) -> None:
+        self._all_pins = (
+            ("_i_pin", InputPin(self, 0)),
+            ("_o_pin", OutputPin(self, 1)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
         self.data: CircuitElementData = {
             "ModelID": Generate,
             "Identifier": Generate,
@@ -217,13 +252,16 @@ class _2_Pin_Gate(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
+        return self._all_pins.iter()
+
     @property
     def i(self) -> InputPin:
-        return InputPin(self, 0)
+        return self._i_pin
 
     @property
     def o(self) -> OutputPin:
-        return OutputPin(self, 1)
+        return self._o_pin
 
 
 class Yes_Gate(_2_Pin_Gate):
@@ -279,6 +317,11 @@ class No_Gate(_2_Pin_Gate):
 class _3_Pin_Gate(_LogicBase):
     """3引脚门电路基类"""
 
+    _all_pins: Tuple[Tuple[str, Union[InputPin, OutputPin]]]
+    _i_up_pin: InputPin
+    _i_low_pin: InputPin
+    _o_pin: OutputPin
+
     def __init__(
         self,
         x: num_type,
@@ -288,6 +331,13 @@ class _3_Pin_Gate(_LogicBase):
         low_level: num_type,
         /,
     ) -> None:
+        self._all_pins = (
+            ("_i_up_pin", InputPin(self, 0)),
+            ("_i_low_pin", InputPin(self, 1)),
+            ("_o_pin", OutputPin(self, 2)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
         self.data: CircuitElementData = {
             "ModelID": "",
             "Identifier": Generate,
@@ -309,17 +359,20 @@ class _3_Pin_Gate(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
+        return self._all_pins.iter()
+
     @property
     def i_up(self) -> InputPin:
-        return InputPin(self, 0)
+        return self._i_up_pin
 
     @property
     def i_low(self) -> InputPin:
-        return InputPin(self, 1)
+        return self._i_low_pin
 
     @property
     def o(self) -> OutputPin:
-        return OutputPin(self, 2)
+        return self._o_pin
 
 
 class Or_Gate(_3_Pin_Gate):
@@ -556,6 +609,12 @@ class _BigElement(_LogicBase):
 class Half_Adder(_BigElement):
     """半加器"""
 
+    _all_pins: Tuple[Tuple[str, Union[InputPin, OutputPin]]]
+    _i_up_pin: InputPin
+    _i_low_pin: InputPin
+    _o_up_pin: OutputPin
+    _o_low_pin: OutputPin
+
     def __init__(
         self,
         x: num_type,
@@ -570,23 +629,34 @@ class Half_Adder(_BigElement):
         low_level: num_type = 0,
     ) -> None:
         super().__init__(x, y, z, high_level, low_level)
+        self._all_pins = (
+            ("_o_up_pin", OutputPin(self, 0)),
+            ("_o_low_pin", OutputPin(self, 1)),
+            ("_i_up_pin", InputPin(self, 2)),
+            ("_i_low_pin", InputPin(self, 3)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
         self.data["ModelID"] = "Half Adder"
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
+        return self._all_pins.iter()
 
     @property
     def i_up(self) -> InputPin:
-        return InputPin(self, 2)
+        return self._i_up_pin
 
     @property
     def i_low(self) -> InputPin:
-        return InputPin(self, 3)
+        return self._i_low_pin
 
     @property
     def o_up(self) -> OutputPin:
-        return OutputPin(self, 0)
+        return self._o_up_pin
 
     @property
     def o_low(self) -> OutputPin:
-        return OutputPin(self, 1)
+        return self._o_low_pin
 
     @final
     @staticmethod

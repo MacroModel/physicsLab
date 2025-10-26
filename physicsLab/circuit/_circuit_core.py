@@ -21,6 +21,8 @@ from physicsLab._typing import (
     override,
     final,
     List,
+    Tuple,
+    Iterator,
 )
 
 
@@ -383,6 +385,8 @@ class CircuitBase(ElementBase, metaclass=_CircuitMeta):
     @classmethod
     def get_all_pins_property(cls):
         """获取该元件的所有引脚对应的property"""
+        # TODO Deprecate this method
+        # i should manually write this function to all subclasses
         for name, obj in inspect.getmembers(cls):
             if isinstance(obj, property):
                 property_type = obj.fget.__annotations__.get("return")
@@ -407,17 +411,25 @@ class CircuitBase(ElementBase, metaclass=_CircuitMeta):
 
 class _TwoPinMixIn(CircuitBase):
     """双引脚模拟电路元件的基类"""
-    _red: Pin
-    _black: Pin
+    _all_pins: Tuple[Tuple[str, Pin]]
+    _red_pin: Pin
+    _black_pin: Pin
 
     def __init__(self) -> None:
-        self._red = Pin(self, 0)
-        self._black = Pin(self, 1)
+        self._all_pins = (
+            ("_red_pin", Pin(self, 0)),
+            ("_black_pin", Pin(self, 1)),
+        )
+        for name, pin in self._all_pins:
+            setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return self._all_pins.iter()
 
     @property
     def red(self) -> Pin:
-        return self._red
+        return self._red_pin
 
     @property
     def black(self) -> Pin:
-        return self._black
+        return self._black_pin

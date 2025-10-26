@@ -241,9 +241,44 @@ Args:
 Returns:
 *  _api_result: 物实api返回体结构
 
+Notes:
+*  Only for compatibility, use `get_user_by_id` or `get_user_by_name` is recommended
+
 对应的协程风格的api:
 ```Python
 async def async_get_user(self, msg: str, get_user_mode: physicsLab.enums.GetUserMode) -> Awaitable[physicsLab.web.api._api_result]
+```
+
+## 获取用户信息
+```Python
+def get_user_by_id(self, id: str) -> physicsLab.web.api._api_result
+```
+
+Args:
+*  id: 用户ID
+
+Returns:
+*  _api_result: 物实api返回体结构
+
+对应的协程风格的api:
+```Python
+async def async_get_user_by_id(self, id: str) -> Awaitable[physicsLab.web.api._api_result]
+```
+
+## 获取用户信息
+```Python
+def get_user_by_name(self, name: str) -> physicsLab.web.api._api_result
+```
+
+Args:
+*  name: 用户名
+
+Returns:
+*  _api_result: 物实api返回体结构
+
+对应的协程风格的api:
+```Python
+async def async_get_user_by_name(self, name: str) -> Awaitable[physicsLab.web.api._api_result]
 ```
 
 ## 修改用户签名
