@@ -58,6 +58,10 @@ class _MemsBase(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
     @property
     def x(self) -> Pin:
         return self._x_pin
@@ -212,6 +216,10 @@ class Analog_Joystick(CircuitBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 6
 
     @final
     @staticmethod
@@ -436,6 +444,10 @@ class Photodiode(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
     @property
     def red(self) -> Pin:
         return self._red_pin
@@ -498,6 +510,10 @@ class Photoresistor(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
     @property
     def red(self) -> Pin:
         return self._red_pin
@@ -548,6 +564,10 @@ class Proximity_Sensor(_LogicBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 1
 
     @final
     @staticmethod

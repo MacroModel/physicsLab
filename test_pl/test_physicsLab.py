@@ -613,8 +613,8 @@ class BasicTest(TestCase, ViztracerTool):
             raise TestFail
 
     @my_test_dec
-    def test_get_all_pins(self):
-        self.assertEqual(len(list(Multiplier.get_all_pins_property())), 8)
+    def test_count_all_pins(self):
+        self.assertEqual(Multiplier.count_all_pins(), 8)
 
     @my_test_dec
     def test_get_pin_name(self):

@@ -150,6 +150,10 @@ class Logic_Input(_LogicBase):
     def o(self) -> OutputPin:
         return self._o_pin
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 1
+
 
 class Logic_Output(_LogicBase):
     """逻辑输出"""
@@ -207,6 +211,10 @@ class Logic_Output(_LogicBase):
     @property
     def i(self) -> InputPin:
         return self._i_pin
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 1
 
 
 class _2_Pin_Gate(_LogicBase):
@@ -267,6 +275,10 @@ class _2_Pin_Gate(_LogicBase):
     def o(self) -> OutputPin:
         return self._o_pin
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Yes_Gate(_2_Pin_Gate):
     """是门"""
@@ -292,6 +304,10 @@ class Yes_Gate(_2_Pin_Gate):
     def zh_name() -> str:
         return "是门"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class No_Gate(_2_Pin_Gate):
     """非门"""
@@ -316,6 +332,10 @@ class No_Gate(_2_Pin_Gate):
     @staticmethod
     def zh_name() -> str:
         return "非门"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class _3_Pin_Gate(_LogicBase):
@@ -384,6 +404,10 @@ class _3_Pin_Gate(_LogicBase):
     def o(self) -> OutputPin:
         return self._o_pin
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
 
 class Or_Gate(_3_Pin_Gate):
     """或门"""
@@ -408,6 +432,10 @@ class Or_Gate(_3_Pin_Gate):
     @staticmethod
     def zh_name() -> str:
         return "或门"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
 
 class And_Gate(_3_Pin_Gate):
@@ -434,6 +462,10 @@ class And_Gate(_3_Pin_Gate):
     def zh_name() -> str:
         return "与门"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
 
 class Nor_Gate(_3_Pin_Gate):
     """或非门"""
@@ -458,6 +490,10 @@ class Nor_Gate(_3_Pin_Gate):
     @staticmethod
     def zh_name() -> str:
         return "或非门"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
 
 class Nand_Gate(_3_Pin_Gate):
@@ -484,6 +520,10 @@ class Nand_Gate(_3_Pin_Gate):
     def zh_name() -> str:
         return "与非门"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
 
 class Xor_Gate(_3_Pin_Gate):
     """异或门"""
@@ -508,6 +548,10 @@ class Xor_Gate(_3_Pin_Gate):
     @staticmethod
     def zh_name() -> str:
         return "异或门"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
 
 class Xnor_Gate(_3_Pin_Gate):
@@ -534,6 +578,10 @@ class Xnor_Gate(_3_Pin_Gate):
     def zh_name() -> str:
         return "同或门"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
 
 class Imp_Gate(_3_Pin_Gate):
     """蕴含门"""
@@ -559,6 +607,10 @@ class Imp_Gate(_3_Pin_Gate):
     def zh_name() -> str:
         return "蕴含门"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
 
 class Nimp_Gate(_3_Pin_Gate):
     """蕴含非门"""
@@ -583,6 +635,10 @@ class Nimp_Gate(_3_Pin_Gate):
     @staticmethod
     def zh_name() -> str:
         return "蕴含非门"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
 
 class _BigElement(_LogicBase):
@@ -614,6 +670,10 @@ class _BigElement(_LogicBase):
         }
         self.high_level = high_level
         self.low_level = low_level
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
 
 class Half_Adder(_BigElement):
@@ -679,6 +739,10 @@ class Half_Adder(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "半加器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
 
 class Full_Adder(_BigElement):
@@ -752,6 +816,10 @@ class Full_Adder(_BigElement):
     def zh_name() -> str:
         return "全加器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 5
+
 
 class Half_Subtractor(_BigElement):
     """半减器"""
@@ -820,6 +888,10 @@ class Half_Subtractor(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "半减器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
 
 class Full_Subtractor(_BigElement):
@@ -896,6 +968,10 @@ class Full_Subtractor(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "全减器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 5
 
 
 class Multiplier(_BigElement):
@@ -990,6 +1066,10 @@ class Multiplier(_BigElement):
     def zh_name() -> str:
         return "二位乘法器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 8
+
 
 class D_Flipflop(_BigElement):
     """D触发器"""
@@ -1054,6 +1134,10 @@ class D_Flipflop(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "D触发器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
 
 class T_Flipflop(_BigElement):
@@ -1120,6 +1204,10 @@ class T_Flipflop(_BigElement):
     def zh_name() -> str:
         return "T'触发器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
+
 
 class Real_T_Flipflop(_BigElement):
     """T触发器"""
@@ -1184,6 +1272,10 @@ class Real_T_Flipflop(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "T触发器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
 
 class JK_Flipflop(_BigElement):
@@ -1256,6 +1348,10 @@ class JK_Flipflop(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "JK触发器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 5
 
 
 class Counter(_BigElement):
@@ -1336,6 +1432,10 @@ class Counter(_BigElement):
     def zh_name() -> str:
         return "计数器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 6
+
 
 class Random_Generator(_BigElement):
     """随机数发生器"""
@@ -1414,6 +1514,10 @@ class Random_Generator(_BigElement):
     @staticmethod
     def zh_name() -> str:
         return "随机数发生器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 6
 
 
 class Eight_Bit_Input(_LogicBase):
@@ -1545,6 +1649,10 @@ class Eight_Bit_Input(_LogicBase):
     def zh_name() -> str:
         return "八位输入器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 8
+
 
 class Eight_Bit_Display(_LogicBase):
     """八位显示器"""
@@ -1668,6 +1776,10 @@ class Eight_Bit_Display(_LogicBase):
     def zh_name() -> str:
         return "八位显示器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 8
+
 
 class Schmitt_Trigger(CircuitBase):
     """施密特触发器"""
@@ -1728,6 +1840,10 @@ class Schmitt_Trigger(CircuitBase):
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
     @property
     def high_level(self) -> num_type:

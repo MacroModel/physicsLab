@@ -81,6 +81,10 @@ class Buzzer(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Spark_Gap(CircuitBase):
     """火花隙"""
@@ -140,6 +144,10 @@ class Spark_Gap(CircuitBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Tesla_Coil(CircuitBase):
@@ -202,6 +210,10 @@ class Tesla_Coil(CircuitBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Color_Light_Emitting_Diode(CircuitBase):
@@ -295,6 +307,10 @@ class Color_Light_Emitting_Diode(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
+
 
 class Dual_Light_Emitting_Diode(CircuitBase):
     """演示发光二极管"""
@@ -366,6 +382,10 @@ class Dual_Light_Emitting_Diode(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Electric_Bell(CircuitBase):
     """电铃"""
@@ -428,6 +448,10 @@ class Electric_Bell(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Musical_Box(CircuitBase):
     """八音盒"""
@@ -489,6 +513,10 @@ class Musical_Box(CircuitBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Resistance_Law(CircuitBase):
@@ -629,6 +657,10 @@ class Resistance_Law(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 8
+
 
 class Solenoid(CircuitBase):
     """通电螺线管"""
@@ -717,6 +749,10 @@ class Solenoid(CircuitBase):
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
+
 
 class Electric_Fan(CircuitBase):
     """小电扇"""
@@ -794,6 +830,10 @@ class Electric_Fan(CircuitBase):
 
     def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Simple_Instrument(CircuitBase):
@@ -1026,3 +1066,7 @@ class Simple_Instrument(CircuitBase):
         )
 
         return res
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
