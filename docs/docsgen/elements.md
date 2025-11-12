@@ -573,9 +573,9 @@ class Simple_Switch(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -640,9 +640,9 @@ class SPDT_Switch(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -713,9 +713,9 @@ class DPDT_Switch(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -786,9 +786,9 @@ class Push_Switch(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -841,9 +841,9 @@ class Air_Switch(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -908,9 +908,9 @@ class Incandescent_Lamp(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -963,9 +963,9 @@ class Battery_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, voltage: Union[int, float] = 1.5, internal_resistance: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1018,9 +1018,9 @@ class Student_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1073,9 +1073,9 @@ class Resistor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, resistance: Union[int, float] = 10) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### fix_resistance
@@ -1134,9 +1134,9 @@ class Fuse_Component(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1189,9 +1189,9 @@ class Slide_Rheostat(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1244,9 +1244,9 @@ class Multimeter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1299,9 +1299,9 @@ class Galvanometer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1354,9 +1354,9 @@ class Microammeter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1409,9 +1409,9 @@ class Electricity_Meter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1464,9 +1464,9 @@ class Resistance_Box(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, resistance: Union[int, float] = 10) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1519,9 +1519,9 @@ class Simple_Ammeter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1574,9 +1574,9 @@ class Simple_Voltmeter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -1629,9 +1629,9 @@ class Logic_Input(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, output_status: bool = False, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1684,9 +1684,9 @@ class Logic_Output(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1739,9 +1739,9 @@ class Yes_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1794,9 +1794,9 @@ class No_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1849,9 +1849,9 @@ class Or_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1904,9 +1904,9 @@ class And_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -1959,9 +1959,9 @@ class Nor_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2014,9 +2014,9 @@ class Nand_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2069,9 +2069,9 @@ class Xor_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2124,9 +2124,9 @@ class Xnor_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2179,9 +2179,9 @@ class Imp_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2234,9 +2234,9 @@ class Nimp_Gate(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2289,9 +2289,9 @@ class Half_Adder(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2344,9 +2344,9 @@ class Full_Adder(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2399,9 +2399,9 @@ class Half_Subtractor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2454,9 +2454,9 @@ class Full_Subtractor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2509,9 +2509,9 @@ class Multiplier(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2564,9 +2564,9 @@ class D_Flipflop(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2619,9 +2619,9 @@ class T_Flipflop(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2674,9 +2674,9 @@ class Real_T_Flipflop(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2729,9 +2729,9 @@ class JK_Flipflop(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2784,9 +2784,9 @@ class Counter(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2839,9 +2839,9 @@ class Random_Generator(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2894,9 +2894,9 @@ class Eight_Bit_Input(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -2954,9 +2954,9 @@ class Eight_Bit_Display(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 3, low_level: Union[int, float] = 0) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -3009,9 +3009,9 @@ class Proximity_Sensor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3064,9 +3064,9 @@ class Schmitt_Trigger(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, high_level: Union[int, float] = 5.0, low_level: Union[int, float, NoneType] = None, inverted: bool = False) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
+    def all_pins(self) -> Iterator[Tuple[str, Union[physicsLab.circuit._circuit_core.InputPin, physicsLab.circuit._circuit_core.OutputPin]]]
 ```
 
 ### get_all_pins_property
@@ -3119,9 +3119,9 @@ class NE555(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3178,9 +3178,9 @@ class Basic_Capacitor(CircuitBase):
 @param peak_voltage: 峰值电压, 单位为V  
 @param internal_resistance: 内阻, 单位为Ω  
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3237,9 +3237,9 @@ class Basic_Inductor(CircuitBase):
 @param internal_resistance: 电感内部阻抗，单位为 Ohm  
 @param is_ideal: 是否为理想模式  
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### fix_inductance
@@ -3298,9 +3298,9 @@ class Basic_Diode(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3353,9 +3353,9 @@ class Light_Emitting_Diode(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3408,6 +3408,11 @@ class Ground_Component(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3456,6 +3461,11 @@ name: 将元件重命名为name
 ```Python
 class Transformer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
+```
+
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3508,6 +3518,11 @@ class Tapped_Transformer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3556,6 +3571,11 @@ name: 将元件重命名为name
 ```Python
 class Mutual_Inductor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
+```
+
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3608,6 +3628,11 @@ class Rectifier(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3658,6 +3683,11 @@ class Transistor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, is_PNP: bool = True, gain: Union[int, float] = 100, max_power: Union[int, float] = 1000) -> None
 ```
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3706,6 +3736,11 @@ name: 将元件重命名为name
 ```Python
 class Comparator(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
+```
+
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3761,6 +3796,11 @@ class Operational_Amplifier(CircuitBase):
 @param max_voltage: 最大电压  
 @param min_voltage: 最小电压  
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3809,6 +3849,11 @@ name: 将元件重命名为name
 ```Python
 class Relay_Component(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, pull_in_current: Union[int, float] = 0.02, rated_current: Union[int, float] = 10, coil_inductance: Union[int, float] = 0.2, coil_resistance: Union[int, float] = 20) -> None
+```
+
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3861,6 +3906,11 @@ class N_MOSFET(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, beta: Union[int, float] = 0.027, threshold: Union[int, float] = 1.5, max_power: Union[int, float] = 1000) -> None
 ```
 
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+```
+
 ### get_all_pins_property
 ```Python
     def get_all_pins_property()
@@ -3909,6 +3959,11 @@ name: 将元件重命名为name
 ```Python
 class P_MOSFET(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
+```
+
+### all_pins
+```Python
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -3961,9 +4016,9 @@ class Current_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4016,9 +4071,9 @@ class Sinewave_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4071,9 +4126,9 @@ class Square_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4126,9 +4181,9 @@ class Triangle_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4181,9 +4236,9 @@ class Sawtooth_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4236,9 +4291,9 @@ class Pulse_Source(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4291,9 +4346,9 @@ class Accelerometer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 2, shifting: Union[int, float] = 0.75, response_factor: Union[int, float] = 0.2290000021457672) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4346,9 +4401,9 @@ class Attitude_Sensor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 180, shifting: Union[int, float] = 2.5, response_factor: Union[int, float] = 0.0125) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4401,9 +4456,9 @@ class Gravity_Sensor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 2, shifting: Union[int, float] = 0.75, response_factor: Union[int, float] = 0.229) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4456,9 +4511,9 @@ class Gyroscope(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 150, shifting: Union[int, float] = 2.5, response_factor: Union[int, float] = 0.0125) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4511,9 +4566,9 @@ class Linear_Accelerometer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 2, shifting: Union[int, float] = 0.75, response_factor: Union[int, float] = 0.229) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4566,9 +4621,9 @@ class Magnetic_Field_Sensor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None, ranges: Union[int, float] = 0.04, shifting: Union[int, float] = 3.2, response_factor: Union[int, float] = 80) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4621,9 +4676,9 @@ class Analog_Joystick(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4676,9 +4731,9 @@ class Photodiode(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4731,9 +4786,9 @@ class Photoresistor(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4786,9 +4841,9 @@ class Buzzer(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4841,9 +4896,9 @@ class Spark_Gap(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4896,9 +4951,9 @@ class Tesla_Coil(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -4951,9 +5006,9 @@ class Color_Light_Emitting_Diode(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5006,9 +5061,9 @@ class Dual_Light_Emitting_Diode(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5061,9 +5116,9 @@ class Electric_Bell(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5116,9 +5171,9 @@ class Musical_Box(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5171,9 +5226,9 @@ class Resistance_Law(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5226,9 +5281,9 @@ class Solenoid(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5281,9 +5336,9 @@ class Electric_Fan(CircuitBase):
     def __init__(self, x: Union[int, float], y: Union[int, float], z: Union[int, float], /, *, elementXYZ: Optional[bool] = None, identifier: Optional[str] = None, experiment: Optional[physicsLab._core._Experiment] = None) -> None
 ```
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property
@@ -5343,9 +5398,9 @@ class Simple_Instrument(CircuitBase):
 @param is_ideal: 是否为理想模式  
 @param is_pulse: 简单乐器是否只响一次  
 
-### all_pins_experimental_unstable
+### all_pins
 ```Python
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
+    def all_pins(self) -> Iterator[Tuple[str, physicsLab.circuit._circuit_core.Pin]]
 ```
 
 ### get_all_pins_property

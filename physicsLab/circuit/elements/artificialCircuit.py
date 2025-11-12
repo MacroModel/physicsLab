@@ -87,7 +87,7 @@ class NE555(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -185,7 +185,7 @@ class Basic_Capacitor(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -348,7 +348,7 @@ class Basic_Inductor(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -503,7 +503,7 @@ class Basic_Diode(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -565,7 +565,7 @@ class Light_Emitting_Diode(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -616,7 +616,7 @@ class Ground_Component(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -689,7 +689,7 @@ class Transformer(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -776,7 +776,7 @@ class Tapped_Transformer(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -859,7 +859,7 @@ class Mutual_Inductor(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -931,7 +931,7 @@ class Rectifier(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1011,7 +1011,7 @@ class Transistor(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1138,7 +1138,7 @@ class Comparator(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1224,7 +1224,7 @@ class Operational_Amplifier(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -1373,7 +1373,7 @@ class Relay_Component(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -1532,7 +1532,7 @@ class N_MOSFET(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -1660,7 +1660,7 @@ class P_MOSFET(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1723,7 +1723,7 @@ class Current_Source(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -1775,7 +1775,7 @@ class _SourceElectricity(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property

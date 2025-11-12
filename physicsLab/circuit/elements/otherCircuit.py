@@ -78,7 +78,7 @@ class Buzzer(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -138,7 +138,7 @@ class Spark_Gap(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -200,7 +200,7 @@ class Tesla_Coil(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -292,7 +292,7 @@ class Color_Light_Emitting_Diode(CircuitBase):
     def r(self) -> Pin:
         return self._r_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -363,7 +363,7 @@ class Dual_Light_Emitting_Diode(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -425,7 +425,7 @@ class Electric_Bell(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -487,7 +487,7 @@ class Musical_Box(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -626,7 +626,7 @@ class Resistance_Law(CircuitBase):
     def r_up(self) -> Pin:
         return self._r_up_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -714,7 +714,7 @@ class Solenoid(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -792,7 +792,7 @@ class Electric_Fan(CircuitBase):
     def black(self) -> Pin:
         return self._black_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
 
@@ -970,7 +970,7 @@ class Simple_Instrument(CircuitBase):
     def o(self) -> Pin:
         return self._o_pin
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @override

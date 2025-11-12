@@ -55,7 +55,7 @@ class _MemsBase(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -210,7 +210,7 @@ class Analog_Joystick(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -433,7 +433,7 @@ class Photodiode(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -495,7 +495,7 @@ class Photoresistor(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -546,7 +546,7 @@ class Proximity_Sensor(_LogicBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final

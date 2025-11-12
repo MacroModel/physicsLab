@@ -68,7 +68,7 @@ class Simple_Switch(_SwitchBase):
             setattr(self, name, pin)
         self.data["ModelID"] = "Simple Switch"
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -133,7 +133,7 @@ class SPDT_Switch(_SwitchBase):
             setattr(self, name, pin)
         self.data["ModelID"] = "SPDT Switch"
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -218,7 +218,7 @@ class DPDT_Switch(_SwitchBase):
             setattr(self, name, pin)
         self.data["ModelID"] = "DPDT Switch"
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -312,7 +312,7 @@ class Push_Switch(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -367,7 +367,7 @@ class Air_Switch(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -452,7 +452,7 @@ class Incandescent_Lamp(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -517,7 +517,7 @@ class Battery_Source(CircuitBase):
         self.voltage = voltage
         self.internal_resistance = internal_resistance
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -634,7 +634,7 @@ class Student_Source(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -711,7 +711,7 @@ class Resistor(CircuitBase):
         }
         self.resistance = resistance
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -801,7 +801,7 @@ class Fuse_Component(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -884,7 +884,7 @@ class Slide_Rheostat(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -954,7 +954,7 @@ class Multimeter(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @property
@@ -1015,7 +1015,7 @@ class Galvanometer(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1080,7 +1080,7 @@ class Microammeter(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1148,7 +1148,7 @@ class Electricity_Meter(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1226,7 +1226,7 @@ class Resistance_Box(CircuitBase):
 
         self.resistance = resistance
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1304,7 +1304,7 @@ class Simple_Ammeter(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final
@@ -1369,7 +1369,7 @@ class Simple_Voltmeter(CircuitBase):
             "DiagramRotation": 0,
         }
 
-    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+    def all_pins(self) -> Iterator[Tuple[str, Pin]]:
         return iter(self._all_pins)
 
     @final

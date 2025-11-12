@@ -106,7 +106,7 @@ class Logic_Input(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -194,7 +194,7 @@ class Logic_Output(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -254,7 +254,7 @@ class _2_Pin_Gate(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -367,7 +367,7 @@ class _3_Pin_Gate(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -654,7 +654,7 @@ class Half_Adder(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Half Adder"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -722,7 +722,7 @@ class Full_Adder(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Full Adder"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -795,7 +795,7 @@ class Half_Subtractor(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Half Subtractor"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -867,7 +867,7 @@ class Full_Subtractor(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Full Subtractor"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -948,7 +948,7 @@ class Multiplier(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Multiplier"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1029,7 +1029,7 @@ class D_Flipflop(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "D Flipflop"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1094,7 +1094,7 @@ class T_Flipflop(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "T Flipflop"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1159,7 +1159,7 @@ class Real_T_Flipflop(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Real-T Flipflop"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1227,7 +1227,7 @@ class JK_Flipflop(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "JK Flipflop"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1302,7 +1302,7 @@ class Counter(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Counter"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1381,7 +1381,7 @@ class Random_Generator(_BigElement):
             setattr(self, name, pin)
         self.data["ModelID"] = "Random Generator"
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1503,7 +1503,7 @@ class Eight_Bit_Input(_LogicBase):
         else:
             raise RuntimeError("The number range entered is incorrect")
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1626,7 +1626,7 @@ class Eight_Bit_Display(_LogicBase):
         self.high_level = high_level
         self.low_level = low_level
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
@@ -1724,7 +1724,7 @@ class Schmitt_Trigger(CircuitBase):
         self.low_level = low_level
         self.inverted = inverted
 
-    def all_pins_experimental_unstable(
+    def all_pins(
         self,
     ) -> Iterator[Tuple[str, Union[InputPin, OutputPin]]]:
         return iter(self._all_pins)
