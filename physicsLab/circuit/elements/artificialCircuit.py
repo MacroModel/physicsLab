@@ -616,6 +616,9 @@ class Ground_Component(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -685,6 +688,9 @@ class Transformer(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @final
     @staticmethod
@@ -770,6 +776,9 @@ class Tapped_Transformer(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -850,6 +859,9 @@ class Mutual_Inductor(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -918,6 +930,9 @@ class Rectifier(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @final
     @staticmethod
@@ -995,6 +1010,9 @@ class Transistor(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @final
     @staticmethod
@@ -1120,6 +1138,9 @@ class Comparator(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -1202,6 +1223,9 @@ class Operational_Amplifier(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @property
     def gain(self) -> num_type:
@@ -1348,6 +1372,9 @@ class Relay_Component(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @property
     def pull_in_current(self) -> num_type:
@@ -1505,6 +1532,9 @@ class N_MOSFET(CircuitBase):
         for name, pin in self._all_pins:
             setattr(self, name, pin)
 
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
+
     @property
     def beta(self) -> num_type:
         """放大系数"""
@@ -1629,6 +1659,9 @@ class P_MOSFET(CircuitBase):
         )
         for name, pin in self._all_pins:
             setattr(self, name, pin)
+
+    def all_pins_experimental_unstable(self) -> Iterator[Tuple[str, Pin]]:
+        return iter(self._all_pins)
 
     @final
     @staticmethod
