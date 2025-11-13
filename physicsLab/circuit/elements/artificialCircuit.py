@@ -95,6 +95,10 @@ class NE555(CircuitBase):
     def zh_name() -> str:
         return "555定时器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 8
+
     @property
     def VCC(self) -> Pin:
         return self._vcc_pin
@@ -200,6 +204,10 @@ class Basic_Capacitor(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "电容"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
     @property
     @final
@@ -364,6 +372,10 @@ class Basic_Inductor(CircuitBase):
     def zh_name() -> str:
         return "电感"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
     @property
     @final
     def rated_current(self) -> num_type:
@@ -519,6 +531,10 @@ class Basic_Diode(CircuitBase):
     def zh_name() -> str:
         return "二极管"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Light_Emitting_Diode(CircuitBase):
     """发光二极管"""
@@ -581,6 +597,10 @@ class Light_Emitting_Diode(CircuitBase):
     def zh_name() -> str:
         return "发光二极管"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Ground_Component(CircuitBase):
     """接地元件"""
@@ -623,6 +643,10 @@ class Ground_Component(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "接地"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 1
 
     @property
     def i(self) -> Pin:
@@ -696,6 +720,10 @@ class Transformer(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "理想变压器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
     @property
     def l_up(self) -> Pin:
@@ -784,6 +812,10 @@ class Tapped_Transformer(CircuitBase):
     def zh_name() -> str:
         return "中心抽头变压器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 5
+
     @property
     def l_up(self) -> Pin:
         return self._l_up_pin
@@ -867,6 +899,10 @@ class Mutual_Inductor(CircuitBase):
     def zh_name() -> str:
         return "理想互感"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
+
     @property
     def l_up(self) -> Pin:
         return self._l_up_pin
@@ -938,6 +974,10 @@ class Rectifier(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "全波整流器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
     @property
     def l_up(self) -> Pin:
@@ -1018,6 +1058,10 @@ class Transistor(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "三极管"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def is_PNP(self) -> bool:
@@ -1145,6 +1189,10 @@ class Comparator(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "比较器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def o(self) -> Pin:
@@ -1294,6 +1342,10 @@ class Operational_Amplifier(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "运算放大器"
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def i_neg(self) -> Pin:
@@ -1449,6 +1501,10 @@ class Relay_Component(CircuitBase):
     def zh_name() -> str:
         return "继电器"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 5
+
     @property
     def l_up(self) -> Pin:
         return self._l_up_pin
@@ -1591,6 +1647,10 @@ class N_MOSFET(CircuitBase):
     def zh_name() -> str:
         return "N-MOSFET"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
     @property
     def D(self) -> Pin:
         return self._D_pin
@@ -1668,6 +1728,10 @@ class P_MOSFET(CircuitBase):
     def zh_name() -> str:
         return "P-MOSFET"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
     @property
     def G(self) -> Pin:
         return self._G_pin
@@ -1739,6 +1803,10 @@ class Current_Source(CircuitBase):
     def zh_name() -> str:
         return "电流源"
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class _SourceElectricity(CircuitBase):
     """波形发生器基类"""
@@ -1785,6 +1853,10 @@ class _SourceElectricity(CircuitBase):
     @property
     def black(self) -> Pin:
         return self._black_pin
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Sinewave_Source(_SourceElectricity):

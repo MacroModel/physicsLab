@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import physicsLab.plAR as plar
-import physicsLab as _warn
+from physicsLab import _warn
 
 from physicsLab._core import _Experiment
 from .._circuit_core import CircuitBase, Pin

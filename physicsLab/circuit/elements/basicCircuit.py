@@ -79,6 +79,10 @@ class Simple_Switch(_SwitchBase):
     def black(self) -> Pin:
         return self._black_pin
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
     @final
     @staticmethod
     def zh_name() -> str:
@@ -174,6 +178,10 @@ class SPDT_Switch(_SwitchBase):
     @property
     def r(self) -> Pin:
         return self._r_pin
+
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
 
 class DPDT_Switch(_SwitchBase):
@@ -273,6 +281,10 @@ class DPDT_Switch(_SwitchBase):
     def r_low(self) -> Pin:
         return self._r_low_pin
 
+    @staticmethod
+    def count_all_pins() -> int:
+        return 6
+
 
 class Push_Switch(CircuitBase):
     """按钮开关"""
@@ -328,6 +340,11 @@ class Push_Switch(CircuitBase):
     def zh_name() -> str:
         return "按钮开关"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Air_Switch(CircuitBase):
     """空气开关"""
@@ -382,6 +399,11 @@ class Air_Switch(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "空气开关"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
     @override
     def __repr__(self) -> str:
@@ -467,6 +489,11 @@ class Incandescent_Lamp(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "白炽灯泡"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
 
 class Battery_Source(CircuitBase):
@@ -565,6 +592,11 @@ class Battery_Source(CircuitBase):
     def zh_name() -> str:
         return "一节电池"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Student_Source(CircuitBase):
     """学生电源"""
@@ -641,6 +673,11 @@ class Student_Source(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "学生电源"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
     @property
     def l(self) -> Pin:
@@ -726,6 +763,11 @@ class Resistor(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "电阻"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
 
     @property
     def resistance(self) -> num_type:
@@ -817,6 +859,11 @@ class Fuse_Component(CircuitBase):
     def zh_name() -> str:
         return "保险丝"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Slide_Rheostat(CircuitBase):
     """滑动变阻器"""
@@ -891,6 +938,11 @@ class Slide_Rheostat(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "滑动变阻器"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
     @property
     def l_low(self) -> Pin:
@@ -970,6 +1022,11 @@ class Multimeter(CircuitBase):
     def zh_name() -> str:
         return "多用电表"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
 
 class Galvanometer(CircuitBase):
     """灵敏电流计"""
@@ -1022,6 +1079,11 @@ class Galvanometer(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "灵敏电流计"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def l(self) -> Pin:
@@ -1087,6 +1149,11 @@ class Microammeter(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "微安表"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def l(self) -> Pin:
@@ -1155,6 +1222,11 @@ class Electricity_Meter(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "电能表"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 4
 
     @property
     def l(self) -> Pin:
@@ -1234,6 +1306,11 @@ class Resistance_Box(CircuitBase):
     def zh_name() -> str:
         return "电阻箱"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 2
+
     @property
     def l(self) -> Pin:
         return self._l_pin
@@ -1312,6 +1389,11 @@ class Simple_Ammeter(CircuitBase):
     def zh_name() -> str:
         return "直流安培表"
 
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
+
     @property
     def l(self) -> Pin:
         return self._l_pin
@@ -1376,6 +1458,11 @@ class Simple_Voltmeter(CircuitBase):
     @staticmethod
     def zh_name() -> str:
         return "直流电压表"
+
+    @final
+    @staticmethod
+    def count_all_pins() -> int:
+        return 3
 
     @property
     def l(self) -> Pin:
