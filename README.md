@@ -3,8 +3,10 @@
 ![输入图片说明](./cover.jpg)
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![build](https://github.com/gaogaotiantian/viztracer/workflows/build/badge.svg)](https://github.com/GoodenoughPhysicsLab/physicsLab/actions)
 ![support-version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
+
+## 警告
+本项目最初的作用只是作者用来学习Python。膨胀的需求将一个小脚本变为如今上万行的项目，是对代码结构的巨大冲击，以及脚本语言动态的特性，使得该项目的代码结构较为混乱。并且由于精力有限，我不会打算用静态语言重写整个项目。但我仍然会非常有限的维护该项目（如果你确实需要的话）。
 
 ## 介绍
 当我们在[物理实验室AR](https://www.turtlesim.com/)纯手动做实验的时候, 往往会遇到一些琐碎、麻烦但又不得不做的事情, 比如：重复的搭建某些电路, 调整元件的位置, 电路内部结构的重复。这些问题都可以通过使用`physicsLab`生成这些电路结构来轻易解决！于是我写了`physicsLab`, 让你能用`Python`在物实做实验。
