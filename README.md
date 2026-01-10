@@ -28,6 +28,10 @@
 * 支持物实**全部**元件
 * 大多数物实网络api封装的支持 (直接与物实服务器进行交互)
 
+## 可选：使用 Phy-Engine 进行电路计算
+`physicsLab`提供了一个可选的第三方电路求解后端 `Phy-Engine`（通过动态库 + `ctypes` 调用）。构建/安装/使用说明见：
+`third-parties/Phy-Engine/README.physicsLab.md`
+
 ## 稳定&兼容
 自版本`2.0.0`及之后, `physicsLab`会逐步增加兼容的考虑与支持。承诺`stable`的api将永远不会移除, 行为几乎不会改变, 除非物实更改了一些api的行为导致physicsLab的底层api的行为被迫发生改变或者更改几乎没有任何影响。
 
