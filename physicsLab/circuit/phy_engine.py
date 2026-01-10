@@ -102,7 +102,12 @@ def _default_phyengine_search_paths() -> List[Path]:
         repo_root / "third-parties" / "Phy-Engine" / "src" / "cmake-build-release",
         repo_root / "third-parties" / "Phy-Engine" / "src" / "cmake-build-debug",
     ]
-    return [native_dir, *dev_builds]
+    # Multi-config generators (e.g. Visual Studio / Xcode) put artifacts under build/{Release,Debug,...}.
+    multi_cfg = []
+    for b in dev_builds:
+        multi_cfg.extend([b / "Release", b / "Debug", b / "RelWithDebInfo", b / "MinSizeRel"])
+
+    return [native_dir, *dev_builds, *multi_cfg]
 
 
 def resolve_phyengine_library_path(explicit_path: Optional[Union[str, os.PathLike]] = None) -> Path:
@@ -181,6 +186,35 @@ class _PhyEngineCDLL:
         self.circuit_digital_clk = self.cdll.circuit_digital_clk
         self.circuit_digital_clk.argtypes = [ctypes.c_void_p]
         self.circuit_digital_clk.restype = ctypes.c_int
+
+        self.circuit_set_model_digital = self.cdll.circuit_set_model_digital
+        self.circuit_set_model_digital.argtypes = [
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+            ctypes.c_size_t,
+            ctypes.c_size_t,
+            ctypes.c_uint8,
+        ]
+        self.circuit_set_model_digital.restype = ctypes.c_int
+
+        self.analyze_circuit = self.cdll.analyze_circuit
+        self.analyze_circuit.argtypes = [
+            ctypes.c_void_p,
+            c_size_t_p,
+            c_size_t_p,
+            ctypes.c_size_t,
+            c_int_p,
+            c_size_t_p,
+            c_double_p,
+            ctypes.c_size_t,
+            c_double_p,
+            c_size_t_p,
+            c_double_p,
+            c_size_t_p,
+            c_bool_p,
+            c_size_t_p,
+        ]
+        self.analyze_circuit.restype = ctypes.c_int
 
         self.circuit_sample = self.cdll.circuit_sample
         self.circuit_sample.argtypes = [
@@ -358,6 +392,7 @@ class PhyEngineCircuit:
         self._comp_size = ctypes.c_size_t(0)
         self._comp_elements: List[object] = []
         self._comp_codes: List[int] = []
+        self._comp_index: Dict[object, int] = {}
 
         self._create()
 
@@ -433,6 +468,32 @@ class PhyEngineCircuit:
         self._comp_size = comp_size
         self._comp_elements = comp_elements[: int(comp_size.value)]
         self._comp_codes = comp_codes[: int(comp_size.value)]
+        self._comp_index = {e: i for i, e in enumerate(self._comp_elements)}
+
+    def _configure_analyzer(
+        self,
+        analyze_type: Union[str, int],
+        *,
+        tr_step: float,
+        tr_stop: float,
+        ac_omega: Optional[float],
+    ) -> None:
+        if self._circuit_ptr is None:
+            raise PhyEngineAnalyzeError("circuit is closed")
+
+        at = _analyze_type_value(analyze_type)
+        if self._lib.circuit_set_analyze_type(self._circuit_ptr, ctypes.c_uint32(at)) != 0:
+            raise PhyEngineAnalyzeError("Phy-Engine circuit_set_analyze_type() failed")
+
+        if at in (_PhyEngineAnalyzeType.TR, _PhyEngineAnalyzeType.TROP):
+            if self._lib.circuit_set_tr(self._circuit_ptr, float(tr_step), float(tr_stop)) != 0:
+                raise PhyEngineAnalyzeError("Phy-Engine circuit_set_tr() failed")
+
+        if at in (_PhyEngineAnalyzeType.AC, _PhyEngineAnalyzeType.ACOP):
+            if ac_omega is None:
+                raise ValueError("ac_omega is required for AC/ACOP analysis")
+            if self._lib.circuit_set_ac_omega(self._circuit_ptr, float(ac_omega)) != 0:
+                raise PhyEngineAnalyzeError("Phy-Engine circuit_set_ac_omega() failed")
 
     def close(self) -> None:
         if self._circuit_ptr is None:
@@ -464,19 +525,7 @@ class PhyEngineCircuit:
         if self._circuit_ptr is None:
             raise PhyEngineAnalyzeError("circuit is closed")
 
-        at = _analyze_type_value(analyze_type)
-        if self._lib.circuit_set_analyze_type(self._circuit_ptr, ctypes.c_uint32(at)) != 0:
-            raise PhyEngineAnalyzeError("Phy-Engine circuit_set_analyze_type() failed")
-
-        if at in (_PhyEngineAnalyzeType.TR, _PhyEngineAnalyzeType.TROP):
-            if self._lib.circuit_set_tr(self._circuit_ptr, float(tr_step), float(tr_stop)) != 0:
-                raise PhyEngineAnalyzeError("Phy-Engine circuit_set_tr() failed")
-
-        if at in (_PhyEngineAnalyzeType.AC, _PhyEngineAnalyzeType.ACOP):
-            if ac_omega is None:
-                raise ValueError("ac_omega is required for AC/ACOP analysis")
-            if self._lib.circuit_set_ac_omega(self._circuit_ptr, float(ac_omega)) != 0:
-                raise PhyEngineAnalyzeError("Phy-Engine circuit_set_ac_omega() failed")
+        self._configure_analyzer(analyze_type, tr_step=tr_step, tr_stop=tr_stop, ac_omega=ac_omega)
 
         if self._lib.circuit_analyze(self._circuit_ptr) != 0:
             raise PhyEngineAnalyzeError("Phy-Engine circuit_analyze() failed")
@@ -518,6 +567,163 @@ class PhyEngineCircuit:
         )
         if rc != 0:
             raise PhyEngineAnalyzeError(f"Phy-Engine circuit_sample() failed (rc={rc})")
+
+        pin_voltage: Dict[object, List[float]] = {}
+        pin_digital: Dict[object, List[bool]] = {}
+        branch_current: Dict[object, List[float]] = {}
+
+        for i, e in enumerate(self._comp_elements):
+            v0 = int(voltage_ord[i])
+            v1 = int(voltage_ord[i + 1])
+            d0 = int(digital_ord[i])
+            d1 = int(digital_ord[i + 1])
+            c0 = int(current_ord[i])
+            c1 = int(current_ord[i + 1])
+
+            pin_voltage[e] = [float(voltage[j]) for j in range(v0, v1)]
+            pin_digital[e] = [bool(digital[j]) for j in range(d0, d1)]
+            branch_current[e] = [float(current[j]) for j in range(c0, c1)]
+
+        return PhyEngineSample(
+            elements=list(self._comp_elements),
+            pin_voltage=pin_voltage,
+            pin_digital=pin_digital,
+            branch_current=branch_current,
+        )
+
+    def set_digital_state(self, element, state: int, *, attribute_index: int = 0) -> None:
+        """Set a digital attribute on an element without rebuilding the circuit.
+
+        Args:
+            element: a non-ground element object from this experiment.
+            state: 4-state digital value (0=L, 1=H, 2=X, 3=Z).
+            attribute_index: the model attribute index (commonly 0 for digital INPUT).
+        """
+        if self._circuit_ptr is None:
+            raise PhyEngineAnalyzeError("circuit is closed")
+        if not isinstance(attribute_index, int) or attribute_index < 0:
+            raise TypeError("attribute_index must be a non-negative int")
+
+        idx = self._comp_index.get(element)
+        if idx is None:
+            raise KeyError("element is not a non-ground component in this circuit")
+
+        s = int(state)
+        if s < 0 or s > 3:
+            raise ValueError("state must be 0..3 (L,H,X,Z)")
+
+        vec_pos = int(self._vec_pos[idx])
+        chunk_pos = int(self._chunk_pos[idx])
+        rc = self._lib.circuit_set_model_digital(
+            self._circuit_ptr,
+            ctypes.c_size_t(vec_pos),
+            ctypes.c_size_t(chunk_pos),
+            ctypes.c_size_t(int(attribute_index)),
+            ctypes.c_uint8(s),
+        )
+        if rc != 0:
+            raise PhyEngineAnalyzeError(f"Phy-Engine circuit_set_model_digital() failed (rc={rc})")
+
+    def analyze_with_changes(
+        self,
+        changes: List[Tuple[object, int, float]],
+        *,
+        analyze_type: Union[str, int] = "DC",
+        tr_step: float = 1e-6,
+        tr_stop: float = 1e-6,
+        ac_omega: Optional[float] = None,
+        digital_clk: bool = False,
+    ) -> PhyEngineSample:
+        """Update attributes and analyze in one call via `analyze_circuit()`."""
+        if self._circuit_ptr is None:
+            raise PhyEngineAnalyzeError("circuit is closed")
+        if not isinstance(changes, list):
+            raise TypeError("changes must be a list of (element, attribute_index, value)")
+
+        self._configure_analyzer(analyze_type, tr_step=tr_step, tr_stop=tr_stop, ac_omega=ac_omega)
+
+        changed_ele: List[int] = []
+        changed_ind: List[int] = []
+        changed_prop: List[float] = []
+        for element, attr_index, value in changes:
+            idx = self._comp_index.get(element)
+            if idx is None:
+                raise KeyError("element is not a non-ground component in this circuit")
+            if not isinstance(attr_index, int) or attr_index < 0:
+                raise TypeError("attribute_index must be a non-negative int")
+            if not isinstance(value, (int, float)):
+                raise TypeError("value must be numeric")
+
+            changed_ele.append(int(idx))
+            changed_ind.append(int(attr_index))
+            changed_prop.append(float(value))
+
+        comp_size = int(self._comp_size.value)
+        total_pins = 0
+        for e in self._comp_elements:
+            count_all_pins = getattr(type(e), "count_all_pins", None)
+            if callable(count_all_pins):
+                total_pins += int(count_all_pins())
+            else:
+                total_pins += sum(1 for _ in e.all_pins())
+
+        total_branches = sum(int(_ELEMENT_BRANCHES.get(code, 0)) for code in self._comp_codes)
+        total_branches = max(total_branches, total_pins)
+
+        voltage = (ctypes.c_double * max(1, total_pins))()
+        voltage_ord = (ctypes.c_size_t * (comp_size + 1))()
+        current = (ctypes.c_double * max(1, total_branches))()
+        current_ord = (ctypes.c_size_t * (comp_size + 1))()
+        digital = (ctypes.c_bool * max(1, total_pins))()
+        digital_ord = (ctypes.c_size_t * (comp_size + 1))()
+
+        if changed_ele:
+            changed_ele_arr = (ctypes.c_int * len(changed_ele))(*changed_ele)
+            changed_ind_arr = (ctypes.c_size_t * len(changed_ind))(*changed_ind)
+            changed_prop_arr = (ctypes.c_double * len(changed_prop))(*changed_prop)
+            prop_size = ctypes.c_size_t(len(changed_ele))
+        else:
+            changed_ele_arr = ctypes.POINTER(ctypes.c_int)()
+            changed_ind_arr = ctypes.POINTER(ctypes.c_size_t)()
+            changed_prop_arr = ctypes.POINTER(ctypes.c_double)()
+            prop_size = ctypes.c_size_t(0)
+
+        rc = self._lib.analyze_circuit(
+            self._circuit_ptr,
+            self._vec_pos,
+            self._chunk_pos,
+            ctypes.c_size_t(comp_size),
+            changed_ele_arr,
+            changed_ind_arr,
+            changed_prop_arr,
+            prop_size,
+            voltage,
+            voltage_ord,
+            current,
+            current_ord,
+            digital,
+            digital_ord,
+        )
+        if rc != 0:
+            raise PhyEngineAnalyzeError(f"Phy-Engine analyze_circuit() failed (rc={rc})")
+
+        if digital_clk:
+            if self._lib.circuit_digital_clk(self._circuit_ptr) != 0:
+                raise PhyEngineAnalyzeError("Phy-Engine circuit_digital_clk() failed")
+            rc = self._lib.circuit_sample(
+                self._circuit_ptr,
+                self._vec_pos,
+                self._chunk_pos,
+                ctypes.c_size_t(comp_size),
+                voltage,
+                voltage_ord,
+                current,
+                current_ord,
+                digital,
+                digital_ord,
+            )
+            if rc != 0:
+                raise PhyEngineAnalyzeError(f"Phy-Engine circuit_sample() failed (rc={rc})")
 
         pin_voltage: Dict[object, List[float]] = {}
         pin_digital: Dict[object, List[bool]] = {}

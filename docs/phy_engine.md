@@ -109,7 +109,7 @@ sample = analyze_experiment_with_phy_engine(ex, analyze_type="DC", digital_clk=T
 
 ### 4.2 复用同一电路对象（多次采样/多次分析）
 
-如果你希望在同一个电路实例上重复调用（例如多次采样、或后续扩展为属性更新），可以显式使用 `PhyEngineCircuit`：
+如果你希望在同一个电路实例上重复调用（例如多次采样、或属性更新），可以显式使用 `PhyEngineCircuit`：
 
 ```python
 from pathlib import Path
@@ -122,6 +122,29 @@ with PhyEngineCircuit(ex, lib_path=lib_path) as c:
     sample2 = c.analyze(analyze_type="DC", digital_clk=True)
 ```
 
+### 4.3 动态更新（不重建电路）
+
+如果你只修改了少量元件的参数（例如电压源 V、或者电阻 R），可以用 `analyze_with_changes(...)` 做“增量更新 + 求解”：
+
+```python
+with PhyEngineCircuit(ex, lib_path=lib_path) as c:
+    s1 = c.analyze(analyze_type="DC")
+    # 将电压源属性(属性下标 0)从 5V 改成 10V，然后重新求解
+    s2 = c.analyze_with_changes([(v, 0, 10.0)], analyze_type="DC")
+```
+
+注意：这里的 `(element, attribute_index, value)` 中的 `attribute_index` 是 Phy-Engine 模型的属性下标（与 `dll_api.h` / 模型 `set_attribute` 一致），不是 `physicsLab` 的 `Properties` 字典键名。
+
+### 4.4 设置数字输入（0/1/X/Z）
+
+对于数字输入（`Logic Input` / Phy-Engine `INPUT`），你可以在不重建电路的情况下设置其数字态（L/H/X/Z）：
+
+```python
+with PhyEngineCircuit(ex, lib_path=lib_path) as c:
+    c.set_digital_state(inp, 1)  # H
+    s = c.analyze(analyze_type="DC", digital_clk=True)
+```
+
 ### 4.3 API 参数（常用）
 
 - `lib_path`：动态库路径（可选）。不传时按“搜索路径”自动查找。
@@ -130,7 +153,7 @@ with PhyEngineCircuit(ex, lib_path=lib_path) as c:
 - `ac_omega`：角频率（`AC/ACOP` 时需要传入）。
 - `digital_clk`：是否在 `analyze()` 后额外调用一次 `circuit_digital_clk()` 更新数字电路（逻辑门、触发器等）。
 
-### 4.4 返回结果（PhyEngineSample）
+### 4.5 返回结果（PhyEngineSample）
 
 `analyze_experiment_with_phy_engine(...)` 返回 `PhyEngineSample`，包含：
 
@@ -139,7 +162,7 @@ with PhyEngineCircuit(ex, lib_path=lib_path) as c:
 - `pin_digital[element] -> list[bool]`：该元件各引脚数字状态（用于数字电路）。
 - `branch_current[element] -> list[float]`：该元件各支路电流（并非所有元件都有支路电流；例如 `Resistor` 可能为空）。
 
-### 4.5 常见异常
+### 4.6 常见异常
 
 - `PhyEngineNotAvailableError`：未找到动态库（请设置 `PHYSICSLAB_PHYENGINE_LIB` 或拷贝到 `physicsLab/native/`）。
 - `PhyEngineUnsupportedElementError`：电路中存在尚未映射到 Phy-Engine 的 `ModelID`。

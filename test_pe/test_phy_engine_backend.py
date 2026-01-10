@@ -217,6 +217,39 @@ class TestPhyEngineBackend(unittest.TestCase):
             self.assertEqual(sample.pin_digital[o], [True])
             expe.close(delete=True)
 
+    def test_incremental_update_analyze_with_changes(self):
+        lib_path = _try_get_lib_path()
+        if lib_path is None:
+            self.skipTest("Phy-Engine dynamic library not available")
+
+        from physicsLab.circuit.phy_engine import PhyEngineCircuit
+
+        with Experiment(
+            OpenMode.crt,
+            "__test_phyengine_incremental__",
+            ExperimentType.Circuit,
+            force_crt=True,
+        ) as expe:
+            v = Battery_Source(0, 0, 0, voltage=5)
+            r = Resistor(1, 0, 0, resistance=1000)
+            g = Ground_Component(2, 0, 0)
+
+            crt_wire(v.red, r.red)
+            crt_wire(r.black, v.black)
+            crt_wire(v.black, g.i)
+
+            with PhyEngineCircuit(expe, lib_path=lib_path) as c:
+                s1 = c.analyze(analyze_type="DC")
+                self.assertAlmostEqual(s1.pin_voltage[r][0], 5.0, places=6)
+                self.assertAlmostEqual(s1.pin_voltage[r][1], 0.0, places=6)
+
+                # VDC attribute 0 is V; change from 5V -> 10V without rebuilding.
+                s2 = c.analyze_with_changes([(v, 0, 10.0)], analyze_type="DC")
+                self.assertAlmostEqual(s2.pin_voltage[r][0], 10.0, places=6)
+                self.assertAlmostEqual(s2.pin_voltage[r][1], 0.0, places=6)
+
+            expe.close(delete=True)
+
     def test_unsupported_element_raises(self):
         lib_path = _try_get_lib_path()
         if lib_path is None:
