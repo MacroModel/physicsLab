@@ -249,13 +249,13 @@ expe.close()
 
 ## 编辑存档的发布信息
 
-使用`edit_publish_info`方法, `title`参数修改发布标题，`description`参数定义发布描述，`wx`参数为是否续写`description`的内容
+使用`edit_publish_info`方法, `title`参数修改发布标题，`introduction`参数定义发布简介，`wx`参数为是否续写`introduction`的内容
 
 ```python
 from physicsLab import *
 
 with Experiment(OpenMode.load_by_sav_name, "example") as expe:
-    expe.edit_publish_info(title="new_title", description="new_description", wx=True)
+    expe.edit_publish_info(title="new_title", introduction="new_introduction", wx=True)
 ```
 
 ## 多存档操作
